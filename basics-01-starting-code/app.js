@@ -3,7 +3,7 @@ const app = Vue.createApp({
     // always return an object
     return {
       courseGoalA: 'Finish the course and learn Vue!',
-      courseGoalB: 'Master Vue and build amazing apps!',
+      courseGoalB: '<h2>Master Vue and build amazing apps!</h2>',
       vueLink: 'https://vuejs.org/',
     };
   },
@@ -22,5 +22,5 @@ app.mount('#user-goal');
 
 // Note: 2 core  features of VueJS: data and interpolation {{ param }}
 // Note: In the intnerpolation block, we can add simple javascript EXPRESSION (not STATEMENT - ex: if/else). Ex {{ 1 + 1 }}
-
 // Note: It basically takes all the data you return in this data object, which you return the data method, and it merges it into a global Vue instance object.
+// Note: v-html is used to tell Vue that the content in data should be interpreted as HTML, but you can introduce security issues, bc you basically curymvent the built in cross site scripting attact protection
