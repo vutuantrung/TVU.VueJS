@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+const app1 = Vue.createApp({
   data() {
     return {
       currentUserInput: '',
@@ -15,7 +15,26 @@ const app = Vue.createApp({
   },
 });
 
-app.mount('#app');
+app1.mount('#app1');
+
+const app2 = Vue.createApp({
+  data() {
+    return {
+      boxASelected: false,
+      boxBSelected: false,
+      boxCSelected: false,
+    };
+  },
+  methods: {
+    boxSelected(box) {
+      this.boxASelected = box === 'A';
+      this.boxBSelected = box === 'B';
+      this.boxCSelected = box === 'C';
+    },
+  },
+});
+
+app2.mount('#app2');
 
 // NOTE Vue's reactivity: which is one of its core features. Essentially viewed as one important thing. The data you define here is something Vue keeps track of. that it would take this data object here and merge all your properties in here into a global behind the scenes managed object, the same object where your methods are merged into by the way.
 // NOTE IMPORTANT this keyword will point to the global object
