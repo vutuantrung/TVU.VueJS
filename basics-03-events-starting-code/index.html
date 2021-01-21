@@ -21,8 +21,9 @@
     <button v-on:click.right="decrementCounter(5)">Reduce 5</button>
     <p v-once>Result: {{ counter }}</p>
     <p>Result: {{ counter }}</p>
-    <input type="text" v-on:input="setName($event, 'VU Tuan')" v-on:keyup.enter="confirmName">
-    <p>Your name: {{ confirmedName }}</p>
+    <button>Reset input</button>
+    <input type="text" v-model="name">
+    <p>Your name: {{ outputFullName() }}</p>
     <form v-on:submit.prevent="submitForm">
       <input type="text">
       <button>Sign Up</button>
