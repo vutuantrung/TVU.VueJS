@@ -5,11 +5,11 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    add: function () {
-      this.counter++;
+    incrementCounter: function (num) {
+      this.counter += num;
     },
-    reduce: function () {
-      this.counter--;
+    decrementCounter: function (num) {
+      this.counter -= num;
     },
   },
 });
@@ -17,3 +17,4 @@ const app = Vue.createApp({
 app.mount('#events');
 
 // NOTE: use to add eventListener
+// NOTE: we should not add logical expression into HTML section
