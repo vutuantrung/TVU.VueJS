@@ -20,10 +20,10 @@ console.log(app);
 // Apply Vue control into a HTML element
 app.mount('#user-goal');
 
-// Note: 2 core  features of VueJS: data and interpolation {{ param }}
-// Note: In the intnerpolation block, we can add simple javascript EXPRESSION (not STATEMENT - ex: if/else). Ex {{ 1 + 1 }}
-// Note: It basically takes all the data you return in this data object, which you return the data method, and it merges it into a global Vue instance object.
-// Note: v-html is used to tell Vue that the content in data should be interpreted as HTML, but you can introduce security issues, bc you basically curymvent the built in cross site scripting attact protection
+// NOTE 2 core  features of VueJS: data and interpolation {{ param }}
+// NOTE In the intnerpolation block, we can add simple javascript EXPRESSION (not STATEMENT - ex: if/else). Ex {{ 1 + 1 }}
+// NOTE It basically takes all the data you return in this data object, which you return the data method, and it merges it into a global Vue instance object.
+// NOTE v-html is used to tell Vue that the content in data should be interpreted as HTML, but you can introduce security issues, bc you basically curymvent the built in cross site scripting attact protection
 
 // SUMMARY: we typically say that we use a declarative approach or that Vue uses a declarative approach.
 // And that's just a fancy way of saying we, as a developer define the goal. We define a template, you could say, of the content we wanna have.
