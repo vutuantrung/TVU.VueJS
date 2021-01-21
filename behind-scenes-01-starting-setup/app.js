@@ -13,7 +13,7 @@ const app1 = Vue.createApp({
       // this.message = this.currentUserInput;
       // console.log(this.$refs.userText.tagName);
 
-      this.message = this.$refs.userText; // point to the DOM object which has this ref-key
+      this.message = this.$refs.userText.value; // point to the DOM object which has this ref-key
     },
   },
 });
