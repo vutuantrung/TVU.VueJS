@@ -20,9 +20,12 @@
     <input type="text" v-model="enteredGoalValue" />
     <button @click="addGoal">Add Goal</button>
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-    <ul>
+    <ul v-else>
       <li>Goal</li>
     </ul>
+    <p v-if="goals.length === 0">You need to start learning Vue JS </p>
+    <p v-if-else="goals.length > 0 && goals.length < 3">You are debutant in Vue JS</p>
+    <p v-else>You are master in Vue JS</p>
   </section>
 </body>
 
