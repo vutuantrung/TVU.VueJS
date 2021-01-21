@@ -10,7 +10,10 @@ const app1 = Vue.createApp({
       this.currentUserInput = event.target.value;
     },
     setText() {
-      this.message = this.currentUserInput;
+      // this.message = this.currentUserInput;
+      // console.log(this.$refs.userText.tagName);
+
+      this.message = this.$refs.userText; // point to the DOM object which has this ref-key
     },
   },
 });
@@ -44,6 +47,8 @@ app2.mount('#app2');
 // NOTE Vue's reactivity: which is one of its core features. Essentially viewed as one important thing. The data you define here is something Vue keeps track of. that it would take this data object here and merge all your properties in here into a global behind the scenes managed object, the same object where your methods are merged into by the way.
 // NOTE IMPORTANT this keyword will point to the global object
 // NOTE but when it comes to the data property, the important and key thing which Vue does is it turns your data object into a reactive data object by essentially wrapping your properties with a JavaScript feature called Proxies.
+// NOTE using ref: Vue has ref feature that allow you to retrieve values from DOM elements. Because Vue detects such refs and stores them internally. It basically memorizes that you want access to the input element. And in the JavaScript code, you can then get this access.
+// $ref is an object full of key value pairs where the keys are the ref identifiers you set up in your template.
 
 // Explication of Proxy: The Proxy object enables you to create a proxy for another object, which can intercept and redefine fundamental operations for that object.
 
