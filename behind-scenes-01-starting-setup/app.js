@@ -16,9 +16,43 @@ const app1 = Vue.createApp({
       this.message = this.$refs.userText.value; // point to the DOM object which has this ref-key
     },
   },
+
+  // Create phase
+  beforeCreate() {
+    console.log('beforeCreate()');
+  },
+  created() {
+    console.log('created()');
+  },
+  beforeMount() {
+    console.log('beforeMount()');
+  },
+  mounted() {
+    console.log('mounted()');
+  },
+
+  // Data change phase
+  beforeUpdate() {
+    console.log('beforeUpdate()');
+  },
+  updated() {
+    console.log('updated()');
+  },
+
+  // Instance unmounted phase
+  beforeUnmount() {
+    console.log('beforeUnmounted()');
+  },
+  unmounted() {
+    console.log('unmounted()');
+  },
 });
 
 app1.mount('#app1');
+
+setTimeout(() => {
+  app1.unmount();
+}, 3000);
 
 const app2 = Vue.createApp({
   template: `
