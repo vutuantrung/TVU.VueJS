@@ -21,12 +21,12 @@
     <button @click="addGoal">Add Goal</button>
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
     <ul v-else>
-      <li>Goal</li>
+      <li v-for="goal in goals">{{ goal }}</li>
     </ul>
     <p v-show="goals.length > 0">Number of goals: {{ goals.length }}</p>
     <p v-show="goals.length === 0">0 goal archived...</p>
     <p v-if="goals.length === 0">You need to start learning Vue JS </p>
-    <p v-if-else="goals.length > 0 && goals.length < 3">You are debutant in Vue JS</p>
+    <p v-else-if="goals.length > 0 && goals.length < 3">You are debutant in Vue JS</p>
     <p v-else>You are master in Vue JS</p>
   </section>
 </body>
