@@ -18,6 +18,11 @@ const app1 = Vue.createApp({
 app1.mount('#app1');
 
 const app2 = Vue.createApp({
+  template: `
+    <div class="demo" :class="['demo', {active: boxASelected}]" @click="boxSelected('A')"></div>
+    <div class="demo" :class="['demo', {active: boxBSelected}]" @click="boxSelected('B')"></div>
+    <div class="demo" :class="['demo', {active: boxCSelected}]" @click="boxSelected('C')"></div>
+  `,
   data() {
     return {
       boxASelected: false,
