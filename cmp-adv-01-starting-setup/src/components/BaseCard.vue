@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header v-if="$slots.header">
+    <header v-if="$slots.__customHeader">
       <slot name="__customHeader">
         <!-- <h2>The default</h2> -->
       </slot>
