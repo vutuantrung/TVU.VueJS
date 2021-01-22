@@ -11,7 +11,29 @@
 </template>
 <script>
 export default {
-  props: ['name', 'phoneNumber', 'emailAddress', 'isFavorite'], // we can use these variables like int data property
+  // props: ['name', 'phoneNumber', 'emailAddress', 'isFavorite'], // we can use these variables like int data property
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
+    emailAddress: {
+      type: String,
+      required: true,
+    },
+    isFavorite: {
+      type: String,
+      required: false,
+      default: '0',
+      validator: function (value) {
+        return value === '1' || value === '0';
+      },
+    },
+  },
   data() {
     return {
       detailsAreVisible: false,
