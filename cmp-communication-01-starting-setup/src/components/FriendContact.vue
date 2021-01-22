@@ -1,6 +1,7 @@
 <template lang="">
     <li>
-        <h2>{{ name }}</h2>
+        <h2>{{ name }}  {{ friendIsFavorite === '1' ? ' (Favorite)' : '' }}</h2>
+        <button @click="toggleFavorite()">Toggle favorite</button>
         <button @click="toggleDetails()">{{ detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
         <ul v-if="detailsAreVisible">
             <li><strong>Phone: </strong>{{phoneNumber}}</li>
@@ -10,7 +11,7 @@
 </template>
 <script>
 export default {
-  props: ['name', 'phoneNumber', 'emailAddress'], // we can use these variables like int data property
+  props: ['name', 'phoneNumber', 'emailAddress', 'isFavorite'], // we can use these variables like int data property
   data() {
     return {
       detailsAreVisible: false,
@@ -20,12 +21,20 @@ export default {
         phone: '01234 546 832',
         email: 'manuel@localhost.com',
       },
+      friendIsFavorite: this.isFavorite,
     };
   },
 
   methods: {
     toggleDetails() {
       this.detailsAreVisible = !this.detailsAreVisible;
+    },
+    toggleFavorite() {
+      if (this.friendIsFavorite === '1') {
+        this.friendIsFavorite = '0';
+      } else {
+        this.friendIsFavorite = '1';
+      }
     },
   },
 };
