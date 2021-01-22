@@ -15,3 +15,5 @@ app.mount('#app');
 // 2. We change it in child component, but not change in parent component
 
 // NOTE .$emit(): That's a built in method, which you can call from inside a Vue component under this keyword. And this allows you to emit your own custom event to which you then can listen from inside the parent component. Now emit wants at least one argument, and that is the name of the custom event.
+
+// NOTE Now emits, so to say, is the counterpart to props. In props you will define which props this component receives. In emits, you will define which custom events your component will eventually at some point emit.
