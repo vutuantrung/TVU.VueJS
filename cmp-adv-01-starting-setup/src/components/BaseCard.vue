@@ -1,17 +1,27 @@
 <template>
   <div>
-    <header>
-      <slot name="__customHeader"></slot>
+    <header v-if="$slots.header">
+      <slot name="__customHeader">
+        <!-- <h2>The default</h2> -->
+      </slot>
     </header>
     <slot></slot>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {},
+};
 </script>
 
 <style scoped>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 div {
   margin: 2rem auto;
   max-width: 30rem;

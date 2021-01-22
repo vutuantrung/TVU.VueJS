@@ -23,3 +23,7 @@ app.mount('#app');
 // NOTE Vue has a special syntax for this exact scenario where you want to use your own component as a wrapper around dynamic content. 
 // They allow us to receive HTML content which also may be using Vue features from outside of the component. 
 // Basically just like props but where props are meant to be used for data, which a component needs, slots are meant to be used for HTML code for the template code a component needs.
+
+// NOTE Check if exists slot before render bc it will not render the unnecessary comment
+
+// NOTE shorhand for v-slot. Ex: v-slot:header -> #header
