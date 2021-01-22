@@ -13,3 +13,5 @@ app.mount('#app');
 // NOTE props property should not be mutated, bc because Vue uses a concept which is called unidirectional data flow. But there is 2 way to change it:
 // 1. We let the parent know that we'd like to change this.
 // 2. We change it in child component, but not change in parent component
+
+// NOTE .$emit(): That's a built in method, which you can call from inside a Vue component under this keyword. And this allows you to emit your own custom event to which you then can listen from inside the parent component. Now emit wants at least one argument, and that is the name of the custom event.
