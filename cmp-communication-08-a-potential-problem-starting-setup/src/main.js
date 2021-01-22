@@ -14,3 +14,7 @@ app.component('knowledge-element', KnowledgeElement);
 app.component('knowledge-grid', KnowledgeGrid);
 
 app.mount('#app');
+
+// NOTE Provide and Inject: another feature Vue offers us, and that is, provide and inject, a pattern you can use to provide data in one place and inject it, which means use it, in another place.
+
+// NOTEProvide and Inject: you can only inject what has been provided on a higher-up level. can provide from children -> parent, neighbor -> neighbor
