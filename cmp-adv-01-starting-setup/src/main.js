@@ -31,3 +31,5 @@ app.mount('#app');
 // NOTE Keep-alive allows you to tell Vue that components should not be removed and deleted entirely but that instead their state should be saved. That they should be cached behind the scenes.
 
 // NOTE using teleport: Teleport, is a built in view component just like component and keep alive.
+
+// IMPORTANT NOTE In Vue2, we ca not have multi top element but not in Vue3
