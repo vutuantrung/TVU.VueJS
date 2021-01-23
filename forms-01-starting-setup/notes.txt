@@ -3,3 +3,5 @@ IMPORTANT NOTE v-model, if the input of type number, the v-model will automatica
 NOTE if we have input checkbox, Vue support 2 type: Array(for multi choices) and Boolean(only 1 choice)
 
 NOTE change button type="button" NOT type="submit" to prevent submit all the form
+
+IMPORTANT NOTE v-model is a short cut of listen to the input event and binding the value atrribute (@input="" :value="")

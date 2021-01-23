@@ -102,7 +102,7 @@
     </div>
 
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="rating"></rating-control>
     </div>
 
     <div class="form-control">
@@ -136,6 +136,7 @@ export default {
       how: null,
       confirm: false,
       userNameValidity: 'pending',
+      rating: null,
     };
   },
   methods: {
@@ -146,6 +147,7 @@ export default {
       console.log(this.how);
       console.log(this.interest);
       console.log(this.confirm);
+      console.log(this.rating);
 
       this.userName = '';
       this.userAge = null;
@@ -153,6 +155,7 @@ export default {
       this.how = null;
       this.interest = [];
       this.confirm = false;
+      this.rating = null;
     },
     validateInput() {
       this.userNameValidity = this.userName === '' ? 'invalid' : 'valid';
