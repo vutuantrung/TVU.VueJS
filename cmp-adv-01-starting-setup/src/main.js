@@ -29,3 +29,5 @@ app.mount('#app');
 // NOTE shorhand for v-slot. Ex: v-slot:header -> #header
 
 // NOTE Keep-alive allows you to tell Vue that components should not be removed and deleted entirely but that instead their state should be saved. That they should be cached behind the scenes.
+
+// NOTE using teleport: Teleport, is a built in view component just like component and keep alive.
