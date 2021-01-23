@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 
 import App from './App.vue';
-import BaseBadge from './components/BaseBadge';
-import BaseCard from './components/BaseCard';
+import BaseBadge from './components/UI/BaseBadge';
+import BaseCard from './components/UI/BaseCard';
 
 
 const app = createApp(App);
