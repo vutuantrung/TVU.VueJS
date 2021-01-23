@@ -4,4 +4,6 @@ NOTE if we have input checkbox, Vue support 2 type: Array(for multi choices) and
 
 NOTE change button type="button" NOT type="submit" to prevent submit all the form
 
-IMPORTANT NOTE v-model is a short cut of listen to the input event and binding the value atrribute (@input="" :value="")
+IMPORTANT NOTE v-model is a short cut of listen to the input event and binding the value atrribute (@input="" :value="").
+For input type: the property is (:value="" @input="")
+For custom form-control: the property is (:model-value="" @update:modelValue="")

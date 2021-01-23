@@ -15,11 +15,6 @@
 export default {
   props: ['modelValue'],
   emits: ['update:modelValue'],
-  computed: {
-    activeOption() {
-      return this.modelValue;
-    },
-  },
   methods: {
     activate(option) {
       this.$emit('update:modelValue', option);
