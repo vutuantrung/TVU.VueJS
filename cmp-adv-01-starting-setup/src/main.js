@@ -27,3 +27,5 @@ app.mount('#app');
 // NOTE Check if exists slot before render bc it will not render the unnecessary comment
 
 // NOTE shorhand for v-slot. Ex: v-slot:header -> #header
+
+// NOTE Keep-alive allows you to tell Vue that components should not be removed and deleted entirely but that instead their state should be saved. That they should be cached behind the scenes.
