@@ -13,6 +13,12 @@
         <p>{{ slotProps["another-prop"] }}</p>
       </template>
     </course-goals>
+
+    <button @click="changeComponent()">Change component</button>
+    <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>
+    <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals> -->
+
+    <component :is="selectedComponent"></component>
   </div>
 </template>
 
@@ -21,6 +27,8 @@ import TheHeader from "./components/TheHeader";
 import BadgeList from "./components/BadgeList.vue";
 import UserInfo from "./components/UserInfo.vue";
 import CourseGoals from "./components/CourseGoals.vue";
+import ActiveGoals from "./components/ActiveGoals.vue";
+import ManageGoals from "./components/ManageGoals.vue";
 
 export default {
   components: {
@@ -28,15 +36,25 @@ export default {
     BadgeList,
     UserInfo,
     CourseGoals,
+    ActiveGoals,
+    ManageGoals,
   },
   data() {
     return {
+      selectedComponent: "active-goals",
       activeUser: {
         name: "Maximilian Schwarzmüller",
         description: "Site owner and admin",
         role: "admin",
       },
     };
+  },
+  methods: {
+    changeComponent() {
+      if (this.selectedComponent === "active-goals")
+        this.selectedComponent = "manage-goals";
+      else this.selectedComponent = "active-goals";
+    },
   },
 };
 </script>
