@@ -15,11 +15,6 @@
 export default {
   props: ['modelValue'],
   emits: ['update:modelValue'],
-  //   data() {
-  //     return {
-  //       activeOption: this.modelValue,
-  //     };
-  //   },
   computed: {
     activeOption() {
       return this.modelValue;

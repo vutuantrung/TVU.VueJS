@@ -141,14 +141,6 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.userAge);
-      console.log(this.userName);
-      console.log(this.referrer);
-      console.log(this.how);
-      console.log(this.interest);
-      console.log(this.confirm);
-      console.log(this.rating);
-
       this.userName = '';
       this.userAge = null;
       this.referrer = 'wom';
