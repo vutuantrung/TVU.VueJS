@@ -44,7 +44,11 @@ const router = createRouter({
       redirect: '/teams'
     }
   ], //This will tell Vue that which router will display which component
-  linkActiveClass: 'router-link-active'
+  linkActiveClass: 'router-link-active',
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition;
+    return { left: 0, top: 0 };
+  }
 });
 
 const app = createApp(App);
