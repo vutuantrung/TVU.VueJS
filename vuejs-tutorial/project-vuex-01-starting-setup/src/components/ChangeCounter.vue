@@ -5,7 +5,7 @@
 export default {
   methods: {
     incrementCounter() {
-      this.$store.commit('increment');
+      this.$store.commit('addNumber', { value: 1 });
     },
   },
 };
