@@ -16,7 +16,8 @@ const router = createRouter({
       path: '/users',
       component: UsersList
     }
-  ] //This will tell Vue that which router will display which component
+  ], //This will tell Vue that which router will display which component
+  linkActiveClass: 'router-link-active'
 });
 
 const app = createApp(App);
