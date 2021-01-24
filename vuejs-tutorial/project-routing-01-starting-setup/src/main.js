@@ -19,7 +19,8 @@ const router = createRouter({
     },
     {
       path: '/teams/:teamId',
-      component: TeamMembers
+      component: TeamMembers,
+      props: true
     }
   ], //This will tell Vue that which router will display which component
   linkActiveClass: 'router-link-active'
