@@ -15,17 +15,21 @@ const router = createRouter({
     },
     {
       path: '/teams',
-      component: TeamsList
+      component: TeamsList,
+      children: [
+        {
+          // /teams/:teamId
+          path: ':teamId',
+          component: TeamMembers,
+          props: true
+        }
+      ]
     },
     {
       path: '/users',
       component: UsersList
     },
-    {
-      path: '/teams/:teamId',
-      component: TeamMembers,
-      props: true
-    },
+
     {
       // This is for '/something' url that client can create, it will redirect to '/teams/
       path: '/:notFound(.*)',

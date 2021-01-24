@@ -4,4 +4,6 @@ NOTE the route is available in this component which is loaded through the router
 
 NOTE The view router does not destroy and rebuild the components that were loaded when you navigate around. It's more efficient to cash them than to always destroy and rebuild them when the URL changes.
 
-NOTE With an alias, the URL does not change. You just load the same component as on a different route.
+NOTE With an alias, the URL does not change. You just load the same component as on a different route. 
+
+NOTE We need to add a second Router Vue in the component where this route is defined as a child component.
