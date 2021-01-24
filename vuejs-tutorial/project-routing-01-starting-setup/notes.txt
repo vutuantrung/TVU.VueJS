@@ -3,3 +3,5 @@ NOTE We got anchor tax here, which has href attribute but this router link compo
 NOTE the route is available in this component which is loaded through the router, and then the route gives us access to various pieces of information.
 
 NOTE The view router does not destroy and rebuild the components that were loaded when you navigate around. It's more efficient to cash them than to always destroy and rebuild them when the URL changes.
+
+NOTE With an alias, the URL does not change. You just load the same component as on a different route.
