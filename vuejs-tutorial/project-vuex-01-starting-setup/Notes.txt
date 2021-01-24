@@ -1,0 +1,1 @@
+NOTE Instead, Vuex has a built-in concept called MUTATIONS. Mutations are clearly defined methods, which have the logic to update the state.And from inside our components, we should, in the end, just trigger those mutations instead of directly manipulating the state. By triggering mutations, all components that want to edit a state do it in the same way.
