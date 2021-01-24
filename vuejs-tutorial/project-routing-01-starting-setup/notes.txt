@@ -9,3 +9,5 @@ NOTE With an alias, the URL does not change. You just load the same component as
 NOTE We need to add a second Router Vue in the component where this route is defined as a child component.
 
 NOTE using url name advantage is if we change the url "/teams" -> "/team", we don't need to update url in the children components
+
+NOTE "to" - which is the route object off the page we're going to, "from" - which is the route object of the page where coming from and "next" - which is a function which we have to call to either confirm or cancel this navigation action.
