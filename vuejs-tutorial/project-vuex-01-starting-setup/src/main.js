@@ -10,8 +10,24 @@ const store = createStore({
     };
   },
   mutations: {
-    addNumber(state, payload) {
+    increment(state) {
+      state.counter++;
+    },
+    increase(state, payload) {
       state.counter = state.counter + payload.value;
+    }
+  },
+  // actions property allows methods running asynchronously
+  actions: {
+    increment(context) {
+      setTimeout(() => {
+        context.commit('addNumber');
+      }, 2000);
+    },
+    increase(context, payload) {
+      setTimeout(() => {
+        context.commit('increase', payload);
+      }, 2000);
     }
   },
   getters: {
