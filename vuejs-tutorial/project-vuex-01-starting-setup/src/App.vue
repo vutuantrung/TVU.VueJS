@@ -1,6 +1,7 @@
 <template>
   <base-container title="Vuex">
     <TheCountner />
+    <FavoriteValue />
     <button @click="addCounter(10)">Add 10</button>
     <ChangeCounter />
   </base-container>
@@ -10,12 +11,14 @@
 import BaseContainer from './components/BaseContainer.vue';
 import TheCountner from './components/TheCounter.vue';
 import ChangeCounter from './components/ChangeCounter.vue';
+import FavoriteValue from './components/FavoriteValue.vue';
 
 export default {
   components: {
     BaseContainer,
     TheCountner,
     ChangeCounter,
+    FavoriteValue,
   },
   methods: {
     addCounter(number) {
