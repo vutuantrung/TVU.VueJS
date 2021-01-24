@@ -36,6 +36,10 @@ const router = createRouter({
       components: {
         default: UsersList,
         footer: UsersFooter
+      },
+      beforeEnter: (to, from, next) => {
+        console.log('users beforeEnter');
+        next();
       }
     },
     {

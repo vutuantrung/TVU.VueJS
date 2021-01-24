@@ -25,6 +25,10 @@ export default {
       this.$router.push('/teams'); // push url to history, looing for more in docs (push(), back(), forward())
     },
   },
+  beforeRouteEnter(to, from, next) {
+    console.log('UsersList beforeRouteEnter');
+    next();
+  },
 };
 </script>
 
