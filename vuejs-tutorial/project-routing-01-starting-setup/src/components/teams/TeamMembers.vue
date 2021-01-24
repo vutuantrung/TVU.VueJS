@@ -8,6 +8,7 @@
         :name="member.fullName"
         :role="member.role"
       ></user-item>
+      <router-link to="/teams/t2">Go to team 2</router-link>
     </ul>
   </section>
 </template>
@@ -26,25 +27,35 @@ export default {
       members: [],
     };
   },
+  methods: {
+    loadTeamMembers(route) {
+      // Get all member ids
+      const teamId = route.params.teamId;
+      const selectedTeam = this.teams.find(team => team.id === teamId);
+      const members = selectedTeam.members;
+
+      // Search in users list by id and add to selectedMemebers
+      const selectedMembers = [];
+      for (const member of members) {
+        const selectedUser = this.users.find(user => user.id === member);
+        selectedMembers.push(selectedUser);
+      }
+
+      // Bind to data
+      this.members = selectedMembers;
+      this.teamName = selectedTeam.name;
+    },
+  },
   created() {
     console.log(this.$route);
     //this.$route.path; // /teams/t1
 
-    // Get all member ids
-    const teamId = this.$route.params.teamId;
-    const selectedTeam = this.teams.find(team => team.id === teamId);
-    const members = selectedTeam.members;
-
-    // Search in users list by id and add to selectedMemebers
-    const selectedMembers = [];
-    for (const member of members) {
-      const selectedUser = this.users.find(user => user.id === member);
-      selectedMembers.push(selectedUser);
-    }
-
-    // Bind to data
-    this.members = selectedMembers;
-    this.teamName = selectedTeam.name;
+    this.loadTeamMembers(this.$route);
+  },
+  watch: {
+    $route(newRoute) {
+      this.loadTeamMembers(newRoute);
+    },
   },
 };
 </script>
