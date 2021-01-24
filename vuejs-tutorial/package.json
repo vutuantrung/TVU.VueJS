@@ -14,7 +14,8 @@
     "project-forms-01-starting-setup",
     "project-http-01-starting-setup",
     "project-lists-cond-01-starting-setup",
-    "project-prj-monster-06-adding-a-battle-log"
+    "project-prj-monster-06-adding-a-battle-log",
+    "project-routing-01-starting-setup"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -23,7 +24,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
