@@ -1,0 +1,1 @@
+NOTE We got anchor tax here, which has href attribute but this router link component actually makes sure that, the browser default is prevented, and the browser doesn't really try to load a different HTML file. But instead, the router then analyzes the value in the ref attribute and checks your routing config to find the appropriate view component that should be loaded.
