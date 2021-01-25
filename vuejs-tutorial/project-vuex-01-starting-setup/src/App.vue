@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     // addCounter(number) {
-    //   // this.$store.dispatch('addNumber', { value: number });
+    //   // this.$store.dispatch('increase', { value: number });
     //   this.$store.dispatch({
     //     type: 'increase',
     //     value: 10,
@@ -41,7 +41,7 @@ export default {
     // },
 
     ...mapActions({
-      increase: 'increase',
+      increase: 'numbers/increase',
     }),
   },
 };

@@ -8,12 +8,12 @@ import { mapActions } from 'vuex';
 export default {
   methods: {
     // incrementCounter() {
-    //   this.$store.dispatch('increment');
+    //   this.$store.dispatch('numbers/increment');
     // },
 
-    // ...mapActions(['increment', 'increase']),
+    // ...mapActions('numbers', ['increment', 'increase']),
 
-    ...mapActions({
+    ...mapActions('numbers', {
       inc: 'increment',
       increase: 'increase',
     }),

@@ -7,3 +7,6 @@ NOTE Then you could have one action that dispatches multiple other actions in re
 NOTE mapGetters: mapGetters gives you an object, which we now merge into the computed properties object. The object mapGetters will give you is an object full of computed properties, which are defined automatically for you.
 
 NOTE state and context is local in each vuex module. But we can access to the main state by using rootState and rootGeters
+
+NOTE If you add namespace true, you tell vuex that now the entire module and not just the state should be kinda detached from the rest of the store. The name space is this key you assigned for adding the module in the main modules object to your store.
+
