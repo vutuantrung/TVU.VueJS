@@ -16,7 +16,8 @@
     "project-lists-cond-01-starting-setup",
     "project-prj-monster-06-adding-a-battle-log",
     "project-routing-01-starting-setup",
-    "project-vuex-01-starting-setup"
+    "project-vuex-01-starting-setup",
+    "project-vuex-13-challenge-solution-3-3"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
