@@ -10,10 +10,10 @@ const counterModule = {
     };
   },
   mutations: {
-    increment(state) {
+    increment(state, rootState, rootGetters) {
       state.counter++;
     },
-    increase(state, payload) {
+    increase(state, payload, rootState, rootGetters) {
       state.counter = state.counter + payload.value;
     }
   },
