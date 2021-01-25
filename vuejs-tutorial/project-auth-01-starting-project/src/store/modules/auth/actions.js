@@ -1,59 +1,58 @@
 export default {
   async login(context, payload) {
-    const res = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBkP9veU53caZN__Hx42jjTNjWh8I2_ig4',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          email: payload.email,
-          password: payload.password,
-          returnSecureToken: true
-        })
-      }
-    );
-
-    const responseData = await res.json();
-
-    if (!res.ok) {
-      console.log(responseData);
-      throw new Error(res.message || 'Failed to authenticate...');
-    }
-
-    context.commit('setUser', {
-      token: responseData.idToken,
-      userId: responseData.localId,
-      tokenExpiration: responseData.expiresIn
+    return context.dispatch('auth', {
+      ...payload,
+      mode: 'login'
     });
-
-    console.log('login successfully');
   },
   async signup(context, payload) {
-    const res = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBkP9veU53caZN__Hx42jjTNjWh8I2_ig4',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          email: payload.email,
-          password: payload.password,
-          returnSecureToken: true
-        })
-      }
-    );
+    return context.dispatch('auth', {
+      ...payload,
+      mode: 'signup'
+    });
+  },
+  async auth(context, payload) {
+    const mode = payload.mode;
+    const url =
+      mode === 'signup'
+        ? 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBkP9veU53caZN__Hx42jjTNjWh8I2_ig4'
+        : 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBkP9veU53caZN__Hx42jjTNjWh8I2_ig4';
+
+    const res = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: payload.email,
+        password: payload.password,
+        returnSecureToken: true
+      })
+    });
 
     const responseData = await res.json();
 
     if (!res.ok) {
-      console.log(responseData);
       throw new Error(res.message || 'Failed to authenticate...');
     }
+
+    localStorage.setItem('token', responseData.idToken);
+    localStorage.setItem('userId', responseData.localId);
 
     context.commit('setUser', {
       token: responseData.idToken,
       userId: responseData.localId,
       tokenExpiration: responseData.expiresIn
     });
+  },
+  tryLogin(context) {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
 
-    console.log('signup successfully');
+    if (token && userId) {
+      context.commit('setUser', {
+        token: token,
+        userId: userId,
+        tokenExpiration: null
+      });
+    }
   },
   logout(context) {
     context.commit('setUser', {
