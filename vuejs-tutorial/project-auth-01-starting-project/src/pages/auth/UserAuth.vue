@@ -66,19 +66,17 @@ export default {
         return;
       }
 
+      // display loading spinner
       this.isLoading = true;
+
+      const actionPayload = {
+        email: this.email,
+        password: this.password,
+      };
+
       // send Http request
       try {
-        if (this.mode === 'login') {
-          // ...
-        } else {
-          console.log('sign up here');
-
-          await this.$store.dispatch('signup', {
-            email: this.email,
-            password: this.password,
-          });
-        }
+        await this.$store.dispatch(this.mode, actionPayload);
       } catch (err) {
         this.error =
           err.message || 'Failed to authenticate. Check you login data...';
