@@ -54,5 +54,12 @@ export default {
     });
 
     console.log('signup successfully');
+  },
+  logout(context) {
+    context.commit('setUser', {
+      token: null,
+      userId: null,
+      tokenExpiration: null
+    });
   }
 };
