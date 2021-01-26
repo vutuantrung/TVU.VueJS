@@ -20,7 +20,8 @@
     "project-vuex-13-challenge-solution-3-3",
     "project-auth-01-starting-project",
     "project-composition-20-using-vuex",
-    "project-composition-16-migrating-the-remaining-components"
+    "project-composition-16-migrating-the-remaining-components",
+    "project-reuse-01-starting-setup"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
