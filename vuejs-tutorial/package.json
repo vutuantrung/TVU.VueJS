@@ -18,7 +18,8 @@
     "project-routing-01-starting-setup",
     "project-vuex-01-starting-setup",
     "project-vuex-13-challenge-solution-3-3",
-    "project-auth-01-starting-project"
+    "project-auth-01-starting-project",
+    "project-composition-20-using-vuex"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
