@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import UserAlert from './UserAlert.vue';
+import UserAlert from './UserAlert';
+import alertMixin from '../mixins/alert';
 
 export default {
   components: {
@@ -17,16 +18,9 @@ export default {
   },
   data() {
     return {
-      alertIsVisible: false,
+      alertTitle: 'Delete User ?',
     };
   },
-  methods: {
-    showAlert() {
-      this.alertIsVisible = true;
-    },
-    hideAlert() {
-      this.alertIsVisible = false;
-    },
-  },
+  mixins: [alertMixin],
 };
 </script>

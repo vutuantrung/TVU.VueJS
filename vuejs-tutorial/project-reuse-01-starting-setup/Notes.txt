@@ -1,0 +1,1 @@
+NOTE By default, data is simply combined, but if you have like, we have it here, for example, the same data property in your component, as you have it in a mixin, the component option wins, not the mixin.
