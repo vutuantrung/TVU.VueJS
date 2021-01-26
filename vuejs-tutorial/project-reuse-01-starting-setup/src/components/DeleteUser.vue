@@ -10,17 +10,20 @@
 
 <script>
 import UserAlert from './UserAlert';
-import alertMixin from '../mixins/alert';
+import useAlert from '../hooks/alert';
 
 export default {
   components: {
     UserAlert,
   },
-  data() {
+  setup() {
+    const { alertIsVisible, showAlert, hideAlert } = useAlert();
+
     return {
-      alertTitle: 'Delete User ?',
+      alertIsVisible,
+      showAlert,
+      hideAlert,
     };
   },
-  mixins: [alertMixin],
 };
 </script>
