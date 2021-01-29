@@ -1,10 +1,12 @@
+import * as types from '../../mutations-type';
+
 export default {
-  setUser(state, payload) {
+  [types.SET_USER](state, payload) {
     state.token = payload.token;
     state.userId = payload.userId;
     state.didAutoLogout = false;
   },
-  setAutoLogout(state) {
+  [types.SET_AUTO_LOGOUT](state) {
     state.didAutoLogout = true;
   }
 };

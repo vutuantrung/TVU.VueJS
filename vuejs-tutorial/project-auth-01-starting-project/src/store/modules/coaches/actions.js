@@ -1,3 +1,5 @@
+import * as types from '../../mutations-type';
+
 export default {
   async registerCoach(context, data) {
     const userId = context.rootGetters.userId;
@@ -24,7 +26,7 @@ export default {
       // error ...
     }
 
-    context.commit('registerCoach', {
+    context.commit(types.REGISTER_COACH, {
       ...coachData,
       id: userId
     });
@@ -58,7 +60,7 @@ export default {
       coaches.push(coach);
     }
 
-    context.commit('setCoaches', coaches);
-    context.commit('setFetchTimestamp');
+    context.commit(types.SET_COACHS, coaches);
+    context.commit(types.SET_FETCH_TIME);
   }
 };

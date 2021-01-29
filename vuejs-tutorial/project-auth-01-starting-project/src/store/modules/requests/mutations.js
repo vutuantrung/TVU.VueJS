@@ -1,8 +1,10 @@
+import * as types from '../../mutations-type';
+
 export default {
-  addRequest(state, payload) {
+  [types.ADD_REQUEST](state, payload) {
     state.requests.push(payload);
   },
-  setRequests(state, payload) {
+  [types.SET_REQUEST](state, payload) {
     state.requests = payload;
   }
 };

@@ -1,3 +1,5 @@
+import * as types from '../../mutations-type';
+
 export default {
   async contactCoach(context, payload) {
     const newRequest = {
@@ -24,7 +26,7 @@ export default {
     newRequest.id = responseData.name;
     newRequest.coachId = payload.coachId;
 
-    context.commit('addRequest', newRequest);
+    context.commit(types.SET_REQUEST, newRequest);
   },
   async fetchRequests(context) {
     const coachId = context.rootGetters.userId;
@@ -53,6 +55,6 @@ export default {
       requests.push(request);
     }
 
-    context.commit('setRequests', requests);
+    context.commit(types.SET_REQUEST, requests);
   }
 };

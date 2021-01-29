@@ -1,3 +1,5 @@
+import * as types from '../../mutations-type';
+
 let timer;
 
 export default {
@@ -46,7 +48,7 @@ export default {
       context.dispatch('autoLogout');
     }, expiresIn);
 
-    context.commit('setUser', {
+    context.commit(types.SET_USER, {
       token: responseData.idToken,
       userId: responseData.localId
     });
@@ -68,7 +70,7 @@ export default {
     }, expiresIn);
 
     if (token && userId) {
-      context.commit('setUser', {
+      context.commit(types.SET_USER, {
         token: token,
         userId: userId
       });
@@ -81,7 +83,7 @@ export default {
 
     clearTimeout(timer);
 
-    context.commit('setUser', {
+    context.commit(types.SET_USER, {
       token: null,
       userId: null,
       tokenExpiration: null
@@ -89,6 +91,6 @@ export default {
   },
   autoLogout(context) {
     context.dispatch('logout');
-    context.commit('setAutoLogout');
+    context.commit(types.SET_AUTO_LOGOUT);
   }
 };

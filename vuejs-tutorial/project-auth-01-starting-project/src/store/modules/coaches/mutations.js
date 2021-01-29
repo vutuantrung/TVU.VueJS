@@ -1,11 +1,13 @@
+import * as types from '../../mutations-type';
+
 export default {
-  registerCoach(state, payload) {
+  [types.REGISTER_COACH](state, payload) {
     state.coaches.push(payload);
   },
-  setCoaches(state, payload) {
+  [types.SET_COACHS](state, payload) {
     state.coaches = payload;
   },
-  setFetchTimestamp(state) {
+  [types.SET_FETCH_TIME](state) {
     state.lastFetch = new Date().getTime();
   }
 };
