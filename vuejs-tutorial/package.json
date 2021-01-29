@@ -21,7 +21,8 @@
     "project-auth-01-starting-project",
     "project-composition-20-using-vuex",
     "project-composition-16-migrating-the-remaining-components",
-    "project-reuse-01-starting-setup"
+    "project-reuse-01-starting-setup",
+    "project-notemaster"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
